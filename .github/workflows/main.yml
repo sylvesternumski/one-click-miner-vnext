@@ -34,14 +34,13 @@ jobs:
       - name: Build for macOS
         run: wails build -x darwin/amd64
 
-      - name: List directories
-        run: ls -1 .
-
       - name: List build files
-        run: ls -1 build/
+        run: ls -1 */bin/
         
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
-          path: build/
+          path: |
+            */bin/
+            *\bin\*
