@@ -26,10 +26,10 @@ jobs:
         run: go install github.com/wailsapp/wails/cmd/wails@v1.16.9
 
       - name: Build for Linux
-        run: wails build -platform linux/amd64
+        run: wails build -x linux/amd64
 
       - name: Build for Windows
-        run: wails build -platform windows/amd64
+        run: wails build -x windows/amd64
 
       - name: Build for macOS
-        run: wails build -platform darwin/amd64
+        run: wails build -x darwin/amd64
