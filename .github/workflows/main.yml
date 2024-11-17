@@ -33,11 +33,12 @@ jobs:
 
       - name: Build for macOS
         run: wails build -x darwin/amd64
+
+      - name: list dit
+        run: ls -1 /tmp/go-build
         
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
-          path: |
-            */bin/
-            *\bin\*
+          path: build/*
